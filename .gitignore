@@ -1,0 +1,11 @@
+#
+.env
+
+*.log
+*.env
+
+# ignore data 
+data/
+# 
+out_dir/ 
+
