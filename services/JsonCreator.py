@@ -1,14 +1,14 @@
 from typing import List, Dict, Any, Optional
 from unittest import result
-from prompt.prompt_data import about_me, Job_1_details_FullTime, Job_2_details_Workstudent, job_advertise_description
+from prompt.prompt_data import about_me, Job_1_details_FullTime, Job_2_details_Workstudent
 import json
 from llmHandler.AzureLLMHandler import AzureLLMHandler
 from llmHandler.ChatGptLLMHandler import ChatGPTHandler
 from Agents.resumePackageAgent import ResumeTailorAgent
 
 class JsonCreator:
-    def __init__(self, base_json_dir: str = r"F:\Vishvajit work\Builder\data"):
-        self.job_description = job_advertise_description
+    def __init__(self, base_json_dir: str = r"F:\Vishvajit work\Builder\data", job_discription= ""):
+        self.job_description = job_discription
         self.job1_details = Job_1_details_FullTime
         self.job2_details = Job_2_details_Workstudent
         self.about_me = about_me
@@ -158,6 +158,15 @@ class JsonCreator:
             job1=self.job1_details,
             job2=self.job2_details
         )
+        
+        self.save_english_result_to_json(response_English, filename)
+        print("English JSON file created successfully.")
+    
+    def create_english_jason_witoutAgent(self, filename, job_description):
+        prompt = self._build_agent_prompt(job_description, self.job1_details, self.job2_details, self.about_me)
+        print(prompt)
+        response_English = self.run_agent(prompt=prompt)
+        
         
         self.save_english_result_to_json(response_English, filename)
         print("English JSON file created successfully.")

@@ -159,12 +159,12 @@ class ResumeBuilderGUI(QWidget, guiHelper):
         self.json_button.clicked.connect(self.run_json)
         self.json_button.setStyleSheet(json_button_style)
         
-        self.english_json_button = QPushButton("Create English JSON")
+        self.english_json_button = QPushButton("Create Eng JSON")
         self.english_json_button.clicked.connect(self.run_json_english)
         self.english_json_button.setStyleSheet(json_button_style)
         
         
-        self.translate_json_button = QPushButton("Translate JSON to German")
+        self.translate_json_button = QPushButton("Translate to German")
         self.translate_json_button.clicked.connect(self.run_json_translate)
         self.translate_json_button.setStyleSheet(json_button_style)
         
@@ -175,13 +175,18 @@ class ResumeBuilderGUI(QWidget, guiHelper):
         self.pdf_button.clicked.connect(self.run_pdf)
 
         
-        self.pdf_CoverLetter_button = QPushButton("CreateCoverLetterPDF")
+        self.pdf_CoverLetter_button = QPushButton("CL PDF")
         self.pdf_CoverLetter_button.setStyleSheet(pdf_button_style)
         self.pdf_CoverLetter_button.clicked.connect(self.run_pdf_cover_letter)
         
         self.pdf_EnglishCV_button = QPushButton("CreateEnglishCVPDF")
         self.pdf_EnglishCV_button.setStyleSheet(pdf_button_style)
         self.pdf_EnglishCV_button.clicked.connect(self.run_pdf_EnglishCV)
+        
+        
+        self.creat_json_withoutAgent =  QPushButton("No Agent Json")
+        self.creat_json_withoutAgent.clicked.connect(self.run_json_no_agent)
+        self.creat_json_withoutAgent.setStyleSheet(json_button_style)
         # disabled initially
         #self.pdf_button.setEnabled(False)
 
@@ -194,6 +199,7 @@ class ResumeBuilderGUI(QWidget, guiHelper):
         button_row.addWidget(self.pdf_button)
         button_row.addWidget(self.pdf_CoverLetter_button)
         button_row.addWidget(self.pdf_EnglishCV_button)
+        button_row.addWidget(self.creat_json_withoutAgent)
         
         button_row.addStretch()
 

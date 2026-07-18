@@ -20,7 +20,7 @@ class ChatGPTHandler:
         self.llm = ChatOpenAI(
                 model=model_name,
                 api_key=self.api_key,
-                temperature=0.2
+                temperature=0
             )
     
     def chat(self, messages):

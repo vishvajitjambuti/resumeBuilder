@@ -97,10 +97,10 @@ template = r"""
 
 \normalsize
 
-\headleft{Personal info \& Sprache}
+\headleft{Personal info \& Language}
 Birth Date : \dates{15/10/1993} \\[0.5ex]
 English : \dates{C1} \\[0.5ex]
-Deutsch : \dates{B2} \\[0.5ex]
+German : \dates{B2} \\[0.5ex]
 
 
 \end{minipage}%

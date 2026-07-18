@@ -100,7 +100,7 @@ template = r"""
 \headleft{Personal info \& Sprache}
 Birth Date : \dates{15/10/1993} \\[0.5ex]
 English : \dates{C1} \\[0.5ex]
-Deutsch : \dates{B2} \\[0.5ex]
+Deutsche : \dates{B2} \\[0.5ex]
 
 
 \end{minipage}%
@@ -166,8 +166,8 @@ Deutsch : \dates{B2} \\[0.5ex]
 \begin{itemize}
 \item Python, C++,   C\# TypeScript, Matlab, SQL, Bash, 
 \item Git, Jira, Docker, 
-\item FastAPI, .NET, React, 
-\item Vector, CANoe, CAPL
+\item ROS2, FastAPI, .NET, React, 
+\item Vector, CANoe, CAPL,
 \end{itemize} 
 
 \headleft{ \textcolor{cvblue!90}{key words}}

@@ -117,7 +117,7 @@ class guiHelper:
 
             with redirect_stdout(tee):
 
-                jason_creator = JsonCreator()
+                jason_creator = JsonCreator(job_discription=self.user_prompt_JD)
 
                 jason_creator.create_jason(
                     filename=self.file_name.text().strip(),
@@ -149,6 +149,61 @@ class guiHelper:
 
             self.json_button.setText("Create JSON")
             self.json_button.setEnabled(True)
+    
+    def run_json_no_agent(self):
+        custom_text_JD = self.custom_input_job_description.toPlainText().strip()
+
+        # Store for later use
+        self.user_prompt_JD = custom_text_JD
+
+        self.log(f"User Input:\n{self.user_prompt_JD}\n")
+
+
+        self.creat_json_withoutAgent.setText("Processing...")
+        self.creat_json_withoutAgent.setEnabled(False)
+
+        QApplication.processEvents()
+
+        output_buffer = io.StringIO()
+        tee = Tee(sys.stdout, output_buffer) 
+        
+
+        try:
+
+            with redirect_stdout(tee):
+
+                jason_creator = JsonCreator(job_discription=self.user_prompt_JD)
+
+                jason_creator.create_english_jason_witoutAgent(
+                    filename=self.file_name.text().strip(),
+                    job_description=self.user_prompt_JD
+                )
+
+            self.console_text += output_buffer.getvalue()
+            self.show_console()
+
+            self.log("✅ JSON Creation Complete")
+
+            QMessageBox.information(
+                self,
+                "Success",
+                "JSON file created successfully."
+            )
+
+        except Exception as e:
+
+            self.log(f"❌ ERROR: {str(e)}")
+
+            QMessageBox.critical(
+                self,
+                "Error",
+                str(e)
+            )
+
+        finally:
+
+            self.creat_json_withoutAgent.setText("No Agent Json ")
+            self.creat_json_withoutAgent.setEnabled(True)
             
     def run_json_english(self):
         custom_text_JD = self.custom_input_job_description.toPlainText().strip()
@@ -171,7 +226,7 @@ class guiHelper:
 
             with redirect_stdout(tee):
 
-                jason_creator = JsonCreator(base_json_dir=DEFAULTS["BASE_JSON_DIR"])
+                jason_creator = JsonCreator(base_json_dir=DEFAULTS["BASE_JSON_DIR"], job_discription=self.user_prompt_JD)
 
                 jason_creator.create_english_jason(
                     filename=self.file_name.text().strip(),
@@ -225,7 +280,7 @@ class guiHelper:
 
             with redirect_stdout(tee):
 
-                jason_creator = JsonCreator(base_json_dir=DEFAULTS["BASE_JSON_DIR"])
+                jason_creator = JsonCreator(base_json_dir=DEFAULTS["BASE_JSON_DIR"], job_discription=self.user_prompt_JD)
 
                 jason_creator.update_json_with_translated_result(
                     filename=self.file_name.text().strip()

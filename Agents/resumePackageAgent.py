@@ -74,6 +74,7 @@ class ResumeTailorAgent:
             - 5 - 6 sentences
             - Tailored to the job description
             - ATS optimized
+            - must take refrenace from my about me, job1, and Job2 tasks (which I already complited ) 
 
             2. Generate keywords
             - 10-20 ATS keywords
@@ -100,6 +101,7 @@ class ResumeTailorAgent:
             6. Generate cover_letter_last
             - 3-4 sentences
             - Summarize qualifications
+            - must take refrenace from my about me, job1, and Job2 tasks (which I already complited ) 
             - Demonstrate enthusiasm
             - No Sincerely
             - No Regards

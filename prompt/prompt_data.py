@@ -1,4 +1,4 @@
-about_me =  """Software Engineer with experience in vehicle systems, ECU data analysis, process automation and test automation. knowlage of  HiL/SiL simulations, 
+about_me =  """Software Engineer with experience in vehicle systems, ECU data analysis, process automation and test automation. knowlage of  HiL/SiL simulation and analysis, 
 CAN bus signal  analysis using CANoe, and KPI-based performance evaluation. Skilled in Python/Bash scripting, C++, API development (FastAPI),
 and automated testing frameworks, 
 with a strong focus on software quality, reliability, and end-to-end lifecycle support for complex systems.
@@ -10,7 +10,7 @@ programming language known: Python, Bash, SQL, C++, flutter
 frameworks: FastAPI, Scikit-learn, TensorFlow, PyTorch, ROS2(robatic operation systems), React, c#
 tools: Git, Docker,  CANoe, MATLAB/Simulink, , .Net,
 skills: machine learning, deep learning, computer vision,  data analysis, data visualization, docker containerization, CI
-language proficiency: English (fluent), German (B1 or B2)
+language proficiency: English (fluent C1), German ( B2)
 """
 
 output_scema = {
