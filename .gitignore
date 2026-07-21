@@ -11,7 +11,9 @@ out_dir/
 
 # Ignore all Python cache folders
 __pycache__/
+*/__pycache__/*
 */__pycache__/
+
 
 # Ignore compiled Python files
 *.pyc
