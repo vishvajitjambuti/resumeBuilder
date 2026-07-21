@@ -7,7 +7,7 @@ from llmHandler.ChatGptLLMHandler import ChatGPTHandler
 from Agents.resumePackageAgent import ResumeTailorAgent
 
 class JsonCreator:
-    def __init__(self, base_json_dir: str = r"F:\Vishvajit work\Builder\data", job_discription= ""):
+    def __init__(self, base_json_dir: str = r"C:\Users\vishv\Working_Dir\resumeBuilder\data", job_discription= ""):
         self.job_description = job_discription
         self.job1_details = Job_1_details_FullTime
         self.job2_details = Job_2_details_Workstudent

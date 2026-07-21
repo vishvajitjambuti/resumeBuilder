@@ -9,7 +9,7 @@ class TexBuilderEnglish:
         self.tex_dir = tex_dir
         self.job_dis_path = job_dis_path
         self.img_path = img_path
-        self.image_path = os.path.normpath(r"F:\Vishvajit work\Builder\vish.png").replace('\\', '/')
+        self.image_path = os.path.normpath(r"C:\Users\vishv\Working_Dir\resumeBuilder\vish.png").replace('\\', '/')
 
     def create_tex_file(self) -> str:
         """Create a .tex file named `{pdf_name}.tex` inside `tex_dir` using the template.

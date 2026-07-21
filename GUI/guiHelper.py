@@ -23,11 +23,11 @@ from PyQt5.QtWidgets import (
 
 DEFAULTS = {
     "file_name": "Vishvajit_jambuti_lebenslauf",
-    "job_dis_path": r"F:\Vishvajit work\Builder\data\Vishvajit_jambuti_lebenslauf.json",
-    "out_dir": r"F:\Vishvajit work\Builder\out_dir\NI",
-    "img_path":  r"F:\Vishvajit work\Builder\out_dir\NI",
+    "job_dis_path": r"C:\Users\vishv\Working_Dir\resumeBuilder\data\Vishvajit_jambuti_lebenslauf.json",
+    "out_dir": r"C:\Users\vishv\Working_Dir\resumeBuilder\out_dir\NI",
+    "img_path":  r"C:\Users\vishv\Working_Dir\resumeBuilder\out_dir\NI",
     "pdf_name": "Vishvajit_jambuti",
-    "BASE_JSON_DIR": r"F:\Vishvajit work\Builder\data"
+    "BASE_JSON_DIR": r"C:\Users\vishv\Working_Dir\resumeBuilder\data"
 }
 
 class Tee:
@@ -117,7 +117,7 @@ class guiHelper:
 
             with redirect_stdout(tee):
 
-                jason_creator = JsonCreator(job_discription=self.user_prompt_JD)
+                jason_creator = JsonCreator(job_discription=self.user_prompt_JD,base_json_dir=DEFAULTS["BASE_JSON_DIR"] )
 
                 jason_creator.create_jason(
                     filename=self.file_name.text().strip(),
@@ -172,7 +172,7 @@ class guiHelper:
 
             with redirect_stdout(tee):
 
-                jason_creator = JsonCreator(job_discription=self.user_prompt_JD)
+                jason_creator = JsonCreator(job_discription=self.user_prompt_JD, base_json_dir=DEFAULTS["BASE_JSON_DIR"])
 
                 jason_creator.create_english_jason_witoutAgent(
                     filename=self.file_name.text().strip(),
