@@ -8,40 +8,32 @@ from prompt.prompt_data import about_me, Job_1_details_FullTime, Job_2_details_W
 #from prompt.prompt_data import about_me, Job_1_details_FullTime, Job_2_details_Workstudent, job_advertise_description
 
 job_advertise_description =  """
-You'll be involved in:
-Designing AI-powered business processes
-Building intelligent AI Agents and Multi-Agent Systems
-Developing workflow automations and orchestration layers
-Integrating APIs, enterprise systems, and data platforms
-Creating scalable AI architectures
-Identifying automation opportunities across organizations
-Running discovery workshops and solution design sessions
-Supporting product innovation and new AI initiatives
-Translating complex business challenges into AI-driven solutions
+Job description
 
+To strengthen our team, we are looking for a software developer (m/f/d) specializing in robotics to develop and further optimize the ROS-based control software for our HERBIE automated guided vehicle (AGV) system. You will test your solutions both in simulation and directly on the actual vehicle and actively contribute to conceptual decisions. You will work in an agile development team and, if required, accompany our robotics solutions on international customer projects.
 
-What We're Looking For
+Your tasks
 
+Commissioning of our systems at the customer's site
+Development of the ROS-based control software for our driverless transport vehicle Herbie
+Testing the software in simulation as well as on the real prototype
+Influence on conceptual decisions
+Working with agile methods (SCRUM)
+Your profile
 
-Technical Background
-You have experience or strong interest in:
-Artificial Intelligence & Generative AI
-Workflow Automation Platforms
-APIs and System Integrations
-Process Engineering
-Data-driven Applications
-Digital Transformation
-AI Agent Frameworks
-Prompt Engineering
-Solution Architecture
+Willingness to travel
+Experience in software development with ROS
+Interest in robotics
+Experience with Linux and Python is an advantage.
+Safe handling of Git
+Enjoyment of working in a team
+Fluent English and/or German
+You are creative and enjoy putting your own ideas into practice in a well-thought-out way.
+Job type: Full-time
 
+Application question(s):
 
-Bonus Points For:
-Python, JavaScript, TypeScript or similar
-n8n, Make, Zapier, LangChain, CrewAI, AutoGen
-OpenAI, Anthropic, Gemini, Azure AI or AWS AI Services
-CRM, ERP or enterprise software integrations
-Experience in consulting or customer-facing projects
+Do you have programming experience with C++ and/or Python?
 """
 
 

@@ -1,4 +1,5 @@
-from typing import List
+import json
+from typing import Any, List
 
 from langchain.tools import Tool
 from langchain.agents import (
@@ -13,7 +14,7 @@ from langchain_openai import ChatOpenAI
 #from ChatGPTHandler import ChatGPTHandler
 from dotenv import load_dotenv
 load_dotenv()
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from llmHandler.ChatGptLLMHandler import ChatGPTHandler
 
 
@@ -36,13 +37,40 @@ from llmHandler.ChatGptLLMHandler import ChatGPTHandler
 
 
 class ResumePackageInput(BaseModel):
-    about_me: str 
+    model_config = ConfigDict(extra="ignore")
+
+    about_me: str = ""
     keywords: List[str] = Field(default_factory=list)
     Job_1_suggested: List[str] = Field(default_factory=list)
     Job_2_suggested: List[str] = Field(default_factory=list)
-    cover_letter_first: str
-    cover_letter_last: str
+    cover_letter_first: str = ""
+    cover_letter_last: str = ""
     rationale: List[str] = Field(default_factory=list)
+
+    @classmethod
+    def from_response(cls, payload: Any) -> "ResumePackageInput":
+        if isinstance(payload, cls):
+            return payload
+
+        if isinstance(payload, str):
+            try:
+                payload = json.loads(payload)
+            except json.JSONDecodeError:
+                payload = {}
+
+        if isinstance(payload, dict):
+            normalized_payload = {
+                "about_me": payload.get("about_me", ""),
+                "keywords": payload.get("keywords") or [],
+                "Job_1_suggested": payload.get("Job_1_suggested") or [],
+                "Job_2_suggested": payload.get("Job_2_suggested") or [],
+                "cover_letter_first": payload.get("cover_letter_first", ""),
+                "cover_letter_last": payload.get("cover_letter_last", ""),
+                "rationale": payload.get("rationale") or [],
+            }
+            return cls.model_validate(normalized_payload)
+
+        return cls()
 
 class ResumeTailorAgent:
 
@@ -127,7 +155,7 @@ class ResumeTailorAgent:
             - Never fabricate metrics.
             - Use only evidence contained in the input.
 
-            Return ONLY JSON.
+            Return ONLY the JSON object
 
             Expected Schema:
 
@@ -150,11 +178,14 @@ class ResumeTailorAgent:
 
             {inputs}
             """
-        strcuted_llm = self.llm.with_structured_output(ResumePackageInput)
-        
-        #response = self.llm.invoke(prompt)
-        response = strcuted_llm.invoke(prompt)
-        return response
+        structured_llm = self.llm.with_structured_output(ResumePackageInput)
+
+        response = structured_llm.invoke(prompt)
+        normalized_response = ResumePackageInput.from_response(response)
+        print('#'*50)
+        print(normalized_response.model_dump())
+        print('#'*50)
+        return normalized_response.model_dump()
 
     ####################################################################
     # TOOLS
@@ -229,7 +260,8 @@ class ResumeTailorAgent:
             tools=self.tools,
             verbose=True,
             max_iterations=3,
-            handle_parsing_errors=True
+            handle_parsing_errors=True,
+            return_intermediate_steps=True
         )
 
     ####################################################################
@@ -289,4 +321,30 @@ class ResumeTailorAgent:
             }
         )
 
-        return result["output"]
+        output = result.get("output", "")
+        if not output or "max iterations" in output.lower():
+            fallback = self._extract_fallback_output(result)
+            if fallback is not None:
+                return fallback
+
+        print('#Re'*50)
+        print(output)
+        print('#'*50)
+
+        return output
+
+    def _extract_fallback_output(self, result: Any) -> Any:
+        intermediate_steps = result.get("intermediate_steps", [])
+        for step in intermediate_steps:
+            action = step.get("action")
+            observation = step.get("observation")
+            if action and getattr(action, "tool", None) == "ResumePackageGenerator" and observation:
+                if isinstance(observation, dict):
+                    return observation
+                if isinstance(observation, str):
+                    try:
+                        return json.loads(observation)
+                    except json.JSONDecodeError:
+                        return observation
+
+        return None

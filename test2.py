@@ -1,6 +1,8 @@
 from services.JsonCreator import JsonCreator
-from pdfCreator.texBuilder import TexBuilder
+from pdfCreator.texBuilderV2 import TexBuilder
 from pdfCreator.pdfBuilder import PDFBuilder
+from pdfCreator.template.englisResumeTemplateV2 import template as english_templateV2
+from pdfCreator.template.Template2 import template as german_templateV1
 jD = """Your tasks:
 Identification, analysis and evaluation of automation potential with a focus on savings and efficiency gains
 Conception, development and implementation of AI-supported workflows and automation solutions
@@ -37,14 +39,19 @@ def jason():
     jason_creator.create_jason(filename = 'bertrandt_v2', job_description = jD)
 
 def pdf():
-    job_dis_path = r"C:\Users\jambutiv\WorkingDir\AI_crash_course\rb\Builder\data\bertrandt.json"
-    tex_dir = r"C:\Users\jambutiv\WorkingDir\AI_crash_course\rb\Builder\out_dir\NI"
-    tex = TexBuilder(tex_dir=tex_dir, job_dis_path=job_dis_path, img_path = None, pdf_name = "Vishvajit_jambuti")
+    job_dis_path = r"C:\Users\vishv\Working_Dir\resumeBuilder\data\Vishvajit_jambuti_lebenslauf_Alpha.json"
+    tex_dir = r"C:\Users\vishv\Working_Dir\resumeBuilder\out_dir\NI"
+    tex = TexBuilder(tex_dir=tex_dir, job_dis_path=job_dis_path, template=english_templateV2, keywords=True, english=True)
     tex_file_path , file = tex.create_tex_file()
     print(tex_file_path)
     pdf = PDFBuilder(tex_dir= tex_dir, pdf_name=file, )
-    pdf = pdf.render_to_pdf()
+    pdf = pdf.render_to_pdf2()
+    tex2 = TexBuilder(tex_dir=tex_dir, job_dis_path=job_dis_path, template=german_templateV1, keywords=True, english=False)
+    tex_file_path , file = tex2.create_tex_file()
+    print(tex_file_path)
+    pdf = PDFBuilder(tex_dir= tex_dir, pdf_name=file, )
+    pdf = pdf.render_to_pdf2()
 
-jason()
+#jason()
 
-#pdf()
+pdf()

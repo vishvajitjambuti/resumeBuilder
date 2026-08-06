@@ -76,3 +76,61 @@ class PDFBuilder:
                 pass
 
         return pdf_file
+
+    def render_to_pdf2(self) -> str:
+        """
+        Render a .tex file to PDF using XeLaTeX (required for fontspec).
+
+        Returns:
+            Path to the generated PDF file.
+
+        Raises:
+            FileNotFoundError: if the .tex file does not exist.
+            RuntimeError: if xelatex fails.
+        """
+        work_dir = self.tex_dir or os.getcwd()
+        tex_file = os.path.join(work_dir, f"{self.pdf_name}.tex")
+        pdf_file = os.path.join(work_dir, f"{self.pdf_name}.pdf")
+
+        if not os.path.exists(tex_file):
+            raise FileNotFoundError(f"TeX file not found: {tex_file}")
+
+        # Prefer xelatex (fontspec requires it)
+        latex_engine = shutil.which("xelatex") or shutil.which("lualatex")
+        if latex_engine is None:
+            raise RuntimeError("xelatex or lualatex not found in PATH.")
+
+        cmd = [
+            latex_engine,
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            os.path.basename(tex_file)
+        ]
+
+        try:
+            # Run twice for references
+            subprocess.check_call(cmd, cwd=work_dir)
+            subprocess.check_call(cmd, cwd=work_dir)
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(f"LaTeX failed with exit code {e.returncode}")
+
+        # Clean auxiliary files
+        aux_exts = ['.aux', '.log', '.out', '.synctex.gz', '.toc']
+        for ext in aux_exts:
+            p = os.path.join(work_dir, f"{self.pdf_name}{ext}")
+            if os.path.exists(p):
+                try:
+                    os.remove(p)
+                except OSError:
+                    pass
+
+        if not os.path.exists(pdf_file):
+            raise RuntimeError("PDF was not generated.")
+
+        if self.open_pdf and os.name == "nt":
+            try:
+                os.startfile(pdf_file)
+            except OSError:
+                pass
+
+        return pdf_file

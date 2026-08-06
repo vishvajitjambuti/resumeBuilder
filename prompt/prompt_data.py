@@ -31,7 +31,7 @@ Job_1_details_FullTime= [
     "tech stack : python,  C++ , bash , CANOE, Capl"
     'project3: =='
     "worked with LLM, RAG and vector database for building internal automation tools for test case generation", 
-    "LLM and AI Agents to create automated test case generation Webapp "
+    "LLM and AI Agents to create automated test case generation Webapp (using Langchain, huggingface, OpenAI, Azure) "
     "Design and implement FastAPI-based backend services and web components for system tesing  and integration",
     "Create and maintain automated unit tests and perform API validation to improve code quality and system reliability",
     "Create API and test automation scripts to support continuous integration and deployment pipelines",
@@ -40,7 +40,7 @@ Job_1_details_FullTime= [
     "Dekstop application development using Python and PyQt for aoutomated test system control and monitoring",
     "Support test automation frameworks and CI-based workflows using Git for continuous integration and validation",
     "Contribute to software lifecycle activities including testing, debugging, and continuous improvement of system performance"
-    "tools and tech stack used: Git , Azure, python , postgreeSQL, Reat ts, Nodejs, LLM, OpenAI "
+    "tools and tech stack used: Git , Azure, python , postgreeSQL, Reat ts, Nodejs, LLM, OpenAI , Langchain, Docker, FastAPI, PyQt, C++, Bash, CANoe, Capl"
     
 ]
 

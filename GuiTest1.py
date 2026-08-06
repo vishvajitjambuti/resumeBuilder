@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import (
     QFileDialog,
     QVBoxLayout,
     QHBoxLayout,
+    QCheckBox,
 )
 from PyQt5.QtWidgets import QFrame
 from services.JsonCreator import JsonCreator
@@ -211,21 +212,35 @@ class ResumeBuilderGUI(QWidget, guiHelper):
 
 
         layout.addLayout(button_row)
+        button_row2 = QHBoxLayout()
+
+       
+        # ---- Tick mark checkboxes (True/False) ----
+        self.job1_checkbox = QCheckBox("Job1")
+        self.job1_checkbox.setChecked(self.job1_update_state)
+        self.job1_checkbox.stateChanged.connect(lambda: self.toggle_job1())
+ 
+        self.job2_checkbox = QCheckBox("Job2")
+        self.job2_checkbox.setChecked(self.job2_update_state)
+        self.job2_checkbox.stateChanged.connect(lambda: self.toggle_job2())
+
+        # ---- Action buttons ----
+        self.german_cv_btn = QPushButton("German CV")
+        self.german_cv_btn.clicked.connect(lambda: self.cv_clicked("German CV"))
+ 
+        self.english_cv_btn = QPushButton("English CV")
+        self.english_cv_btn.clicked.connect(lambda: self.cv_clicked("English CV"))
+
+        button_row2.addWidget(self.job1_checkbox)
+        button_row2.addWidget(self.job2_checkbox)
+        button_row2.addWidget(self.german_cv_btn)
+        button_row2.addWidget(self.english_cv_btn)
+
+        layout.addLayout(button_row2)
+ 
 
 
-        # ------------------------------
-        # Console Output
-        # ------------------------------
-
-        # layout.addWidget(QLabel("Console Output"))
-
-        # self.console = QTextEdit()
-        # self.console.setReadOnly(True)
-
-        # layout.addWidget(self.console)
-
-        # self.setLayout(layout)
-
+       
 
         
         # ------------------------------
@@ -273,211 +288,7 @@ class ResumeBuilderGUI(QWidget, guiHelper):
         self.setLayout(layout)
 
 
-    # ====================================================
-    # File Browsers
-    # ====================================================
-
-    # def select_json(self):
-    #     path, _ = QFileDialog.getOpenFileName(
-    #         self,
-    #         "Select JSON File",
-    #         "",
-    #         "JSON Files (*.json)"
-    #     )
-
-    #     if path:
-    #         self.job_dis_path.setText(path)
-
-    # def select_output_dir(self):
-    #     path = QFileDialog.getExistingDirectory(
-    #         self,
-    #         "Select Output Directory"
-    #     )
-
-    #     if path:
-    #         self.out_dir.setText(path)
-
-    # def select_image(self):
-    #     path, _ = QFileDialog.getOpenFileName(
-    #         self,
-    #         "Select Image",
-    #         "",
-    #         "Images (*.png *.jpg *.jpeg)"
-    #     )
-
-    #     if path:
-    #         self.img_path.setText(path)
-
-    # # ====================================================
-    # # Helper
-    # # ====================================================
-
-    # def log(self, text):
-    #     self.console_text += text + "\n"
-    #     self.viewer.setPlainText(self.console_text)
-
-
-    # # ====================================================
-    # # JSON Function
-    # # ====================================================
-
-
     
-    # def run_json(self):
-
-        
-    #     custom_text_JD = self.custom_input_job_description.toPlainText().strip()
-
-    #     # Store for later use
-    #     self.user_prompt_JD = custom_text_JD
-
-    #     self.log(f"User Input:\n{self.user_prompt_JD}\n")
-
-
-    #     self.json_button.setText("Processing...")
-    #     self.json_button.setEnabled(False)
-
-    #     QApplication.processEvents()
-
-    #     output_buffer = io.StringIO()
-
-    #     try:
-
-    #         with redirect_stdout(output_buffer):
-
-    #             jason_creator = JsonCreator()
-
-    #             jason_creator.create_jason(
-    #                 filename=self.file_name.text().strip(),
-    #                 job_description=self.user_prompt_JD
-    #             )
-
-    #         self.console_text += output_buffer.getvalue()
-    #         self.show_console()
-
-    #         self.log("✅ JSON Creation Complete")
-
-    #         QMessageBox.information(
-    #             self,
-    #             "Success",
-    #             "JSON file created successfully."
-    #         )
-
-    #     except Exception as e:
-
-    #         self.log(f"❌ ERROR: {str(e)}")
-
-    #         QMessageBox.critical(
-    #             self,
-    #             "Error",
-    #             str(e)
-    #         )
-
-    #     finally:
-
-    #         self.json_button.setText("Create JSON")
-    #         self.json_button.setEnabled(True)
-
-
-    # # ====================================================
-    # # PDF Function
-    # # ====================================================
-
-    
-    # def run_pdf(self):
-
-    #     self.pdf_button.setText("Processing...")
-    #     self.pdf_button.setEnabled(False)
-
-    #     QApplication.processEvents()
-
-    #     output_buffer = io.StringIO()
-
-    #     try:
-
-    #         with redirect_stdout(output_buffer):
-
-    #             tex = TexBuilder(
-    #                 tex_dir=self.out_dir.text().strip(),
-    #                 job_dis_path=self.job_dis_path.text().strip(),
-    #                 img_path=self.img_path.text().strip() or None,
-    #                 pdf_name=self.pdf_name.text().strip(),
-    #             )
-
-    #             tex_file_path, file = tex.create_tex_file()
-
-    #             print(f"TEX FILE: {tex_file_path}")
-
-    #             pdf_builder = PDFBuilder(
-    #                 tex_dir=self.out_dir.text().strip(),
-    #                 pdf_name=file,
-    #             )
-
-    #             pdf_builder.render_to_pdf()
-
-    #         self.console_text += output_buffer.getvalue()
-    #         self.show_console()
-
-    #         self.log("✅ PDF Creation Complete")
-
-    #         QMessageBox.information(
-    #             self,
-    #             "Success",
-    #             "PDF created successfully."
-    #         )
-
-    #     except Exception as e:
-
-    #         self.log(f"❌ ERROR: {str(e)}")
-
-    #         QMessageBox.critical(
-    #             self,
-    #             "Error",
-    #             str(e)
-    #         )
-
-    #     finally:
-
-    #         self.pdf_button.setText("Create PDF")
-    #         self.pdf_button.setEnabled(True)
-
-
-    # def show_console(self):
-    #     self.viewer.setPlainText(self.console_text)
-
-
-    # def show_json_file(self):
-
-    #     try:
-
-    #         json_path = self.job_dis_path.text().strip()
-
-    #         with open(json_path, "r", encoding="utf-8") as f:
-    #             data = json.load(f)
-
-    #         self.viewer.setPlainText(
-    #             json.dumps(
-    #                 data,
-    #                 indent=4,
-    #                 ensure_ascii=False
-    #             )
-    #         )
-
-    #     except Exception as e:
-
-    #         self.viewer.setPlainText(
-    #             f"Unable to load JSON file\n\n{str(e)}"
-    #         )
-
-        
-    # def update_json_path(self):
-
-    #     file_name = self.file_name.text().strip()
-
-    #     if file_name:
-    #         json_path = os.path.join(DEFAULTS["BASE_JSON_DIR"], f"{file_name}.json")
-    #         self.job_dis_path.setText(json_path)
-
         
 
 if __name__ == "__main__":
