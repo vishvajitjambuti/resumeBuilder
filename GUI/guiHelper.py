@@ -4,7 +4,8 @@ from pdfCreator.pdfBuilder import PDFBuilder
 from pdfCreator.texBuilderEnglish import TexBuilderEnglish
 from pdfCreator.texCoverLetter import CoverLetterTexBuilder
 from pdfCreator.texBuilderV2 import TexBuilder as TexBuilderV2
-from pdfCreator.template.englisResumeTemplateV2 import template as english_templateV2
+from pdfCreator.template.englishResumeTemplateV2 import template as english_templateV2
+from pdfCreator.template.germanResumeTemplateV2 import template as german_templateV2
 from pdfCreator.template.Template2 import template as german_templateV1
 import sys
 import io
@@ -582,16 +583,16 @@ class guiHelper:
             self.job_dis_path.setText(json_path)
 
     def toggle_job1(self):
-        self.job1_state = self.job1_checkbox.isChecked()  # updates the variable (True/False)
+        self.job1_update_state = self.job1_checkbox.isChecked()  # updates the variable (True/False)
         #self.status_label.setText(f"Job1 toggled to {self.job1_state}")
-        print(f"job1_state = {self.job1_state}")
+        print(f"job1_state = {self.job1_update_state}")
  
     def toggle_job2(self):
         self.job2_state = self.job2_checkbox.isChecked()  # updates the variable (True/False)
         #self.status_label.setText(f"Job2 toggled to {self.job2_state}")
         print(f"job2_state = {self.job2_state}")
 
-    def run_pdf_EnglishV2(self):
+    def run_pdf_ENV2(self):
     
             self.pdf_button.setText("Processing...")
             self.pdf_button.setEnabled(False)
@@ -608,12 +609,11 @@ class guiHelper:
                     tex = TexBuilderV2(
                         tex_dir=self.out_dir.text().strip(),
                         job_dis_path=self.job_dis_path.text().strip(),
-                        img_path=self.img_path.text().strip() or None,
-                        pdf_name=self.pdf_name.text().strip(),
                         template=english_templateV2, 
-                        keywords=True, english=True
-                        job1=self.job1_state, 
-                        job2=self.job2_state
+                        keywords=True, 
+                        english=True,
+                        job1=self.job1_update_state, 
+                        job2=self.job1_update_state
                     )
     
                     tex_file_path, file = tex.create_tex_file()
@@ -625,7 +625,7 @@ class guiHelper:
                         pdf_name=file,
                     )
     
-                    pdf_builder.render_to_pdf()
+                    pdf_builder.render_to_pdf2()
     
                 self.console_text += output_buffer.getvalue()
                 self.show_console()
@@ -652,3 +652,64 @@ class guiHelper:
     
                 self.pdf_button.setText("Create PDF")
                 self.pdf_button.setEnabled(True)
+
+    def run_pdf_DE2(self):
+        
+                self.pdf_button.setText("Processing...")
+                self.pdf_button.setEnabled(False)
+        
+                QApplication.processEvents()
+        
+                output_buffer = io.StringIO()
+                tee = Tee(sys.stdout, output_buffer)
+        
+                try:
+        
+                    with redirect_stdout(tee):
+        
+                        tex = TexBuilderV2(
+                            tex_dir=self.out_dir.text().strip(),
+                            job_dis_path=self.job_dis_path.text().strip(),
+                            template=german_templateV2,
+                            keywords=True, 
+                            english=False,
+                            job1=self.job1_update_state, 
+                            job2=self.job1_update_state
+                        )
+        
+                        tex_file_path, file = tex.create_tex_file()
+        
+                        print(f"TEX FILE: {tex_file_path}")
+        
+                        pdf_builder = PDFBuilder(
+                            tex_dir=self.out_dir.text().strip(),
+                            pdf_name=file,
+                        )
+        
+                        pdf_builder.render_to_pdf2()
+        
+                    self.console_text += output_buffer.getvalue()
+                    self.show_console()
+        
+                    self.log("✅ PDF Creation Complete")
+        
+                    QMessageBox.information(
+                        self,
+                        "Success",
+                        "PDF created successfully."
+                    )
+        
+                except Exception as e:
+        
+                    self.log(f"❌ ERROR: {str(e)}")
+        
+                    QMessageBox.critical(
+                        self,
+                        "Error",
+                        str(e)
+                    )
+        
+                finally:
+        
+                    self.pdf_button.setText("Create PDF")
+                    self.pdf_button.setEnabled(True)

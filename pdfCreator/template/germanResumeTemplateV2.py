@@ -149,67 +149,67 @@ __PROFILE_DETAILS__
 __JOB_1_DETAILS__
 }
 
-\entrytitle{Master's Thesis}{08/2022 - 05/2023}
+\entrytitle{Masterarbeit}{08/2022 - 05/2023}
 \entrycompany{RPTU Kaiserslautern-Landau}
 {\color{bodytext}
 \begin{itemize}
-\item Developed a real-time object detection system for construction site safety using YOLOv5 and PyTorch to detect personnel and construction equipment.
-\item Trained and optimized deep learning models on a GPU cluster, improving detection accuracy and inference performance.
-\item Deployed the object detection pipeline on an NVIDIA Jetson Nano and accelerated inference using TensorRT for edge AI applications.
-\item Designed and implemented ROS2-based image processing and sensor data pipelines for real-time perception and data integration.
-\item Containerized the complete application with Docker, enabling reproducible deployment, simplified maintenance, and portable edge-device execution.
+\item Entwicklung eines Echtzeit-Objekterkennungssystems für die Sicherheit auf Baustellen mittels YOLOv5 und PyTorch zur Erkennung von Personal und Baumaschinen.
+\item Training und Optimierung von Deep-Learning-Modellen auf einem GPU-Cluster zur Verbesserung von Erkennungsgenauigkeit und Inferenzleistung.
+\item Bereitstellung der Objekterkennungs-Pipeline auf einem NVIDIA Jetson Nano sowie Beschleunigung der Inferenz mittels TensorRT für Edge-AI-Anwendungen.
+\item Konzeption und Implementierung von ROS2-basierten Bildverarbeitungs- und Sensordaten-Pipelines für Echtzeit-Wahrnehmung und Datenintegration.
+\item Containerisierung der gesamten Anwendung mit Docker zur Ermöglichung reproduzierbarer Deployments, vereinfachter Wartung und portabler Ausführung auf Edge-Geräten.
 \end{itemize}}
 
-\entrytitle{Work student}{04/2021 - 08/2022}
+\entrytitle{Werkstudent}{04/2021 - 08/2022}
 \entrycompany{Elvinci.de GmbH}
 {\color{bodytext}
 __JOB_2_DETAILS__
 }
 
-\entrytitle{Internship}{11/2021 - 04/2021}
+\entrytitle{Praktikum}{11/2021 - 04/2022}
 \entrycompany{Elvinci.de GmbH}
 {\color{bodytext}
 \begin{itemize}
-\item Automated daily operational tasks to improve efficiency and streamline business processes.
-\item Performed statistical and predictive analysis of B2B sales data sourced from an ERP system.
-\item Designed and executed API test cases throughout the development lifecycle to identify issues early and improve overall API quality.
-\item Developed a mobile Android application for warehouse product data collection using Flutter and Dart.
-\item Created and executed test cases for the Android application to ensure functionality and reliability.
-\item Worked on a product Recommendation and Classification system.
+\item Automatisierung täglicher betrieblicher Aufgaben zur Effizienzsteigerung und Optimierung von Geschäftsprozessen.
+\item Durchführung statistischer und prädiktiver Analysen von B2B-Verkaufsdaten aus einem ERP-System.
+\item Konzeption und Durchführung von API-Testfällen über den gesamten Entwicklungszyklus hinweg zur frühzeitigen Fehlererkennung und Verbesserung der allgemeinen API-Qualität.
+\item Entwicklung einer mobilen Android-Anwendung zur Erfassung von Lagerproduktdaten mit Flutter und Dart.
+\item Erstellung und Durchführung von Testfällen für die Android-Anwendung zur Sicherstellung von Funktionalität und Zuverlässigkeit.
+\item Mitarbeit an einem Produkt-Empfehlungs- und Klassifizierungssystem.
 \end{itemize}}
 
-\entrytitle{Research Assistant RPTU}{08/2019 - 10/2020}
+\entrytitle{Wissenschaftlicher Assistent RPTU}{08/2019 - 10/2020}
 \entrycompany{RPTU Kaiserslautern-Landau}
 {\color{bodytext}
 \begin{itemize}
-\item Developed a virtual 3D environment for production automation using Unreal Engine 4 and Blender.
-\item Created datasets for deep learning applications.
-\item Performed testing and validation of the generated datasets.
+\item Entwicklung einer virtuellen 3D-Umgebung für Produktionsautomatisierung mit Unreal Engine 4 und Blender.
+\item Erstellung von Datensätzen für Deep-Learning-Anwendungen.
+\item Durchführung von Tests und Validierung der generierten Datensätze.
 \end{itemize}}
 
-\entrytitle{Project Work}{11/2018 - 08/2019}
+\entrytitle{Projektarbeit}{11/2018 - 08/2019}
 \entrycompany{RPTU Kaiserslautern-Landau}
 {\color{bodytext}
 \begin{itemize}
-\item Topic: Scene Matching
-\item Developed a virtual 3D environment in Unreal Engine 4 and conducted tests using real images.
-\item Tools and Frameworks Used: Finroc (Robotic Framework used in RR Lab TU KL), Unreal Engine 4, Blender
+\item Thema: Scene Matching
+\item Entwicklung einer virtuellen 3D-Umgebung in Unreal Engine 4 und Durchführung von Tests mit realen Bildern.
+\item Verwendete Tools und Frameworks: Finroc (Robotik-Framework der RR Lab TU KL), Unreal Engine 4, Blender
 \end{itemize}}
 
 \entrytitle{Electromobility Project}{04/2017 - 06/2017}
 \entrycompany{RPTU Kaiserslautern-Landau}
 {\color{bodytext}
 \begin{itemize}
-\item Performed energy consumption and energy management simulations for hybrid vehicles using MATLAB/Simulink.
+\item Durchführung von Simulationen zum Energieverbrauch und Energiemanagement für Hybridfahrzeuge mit MATLAB/Simulink.
 \end{itemize}}
 
-\entrytitle{Junior Engineer}{07/2015 - 06/2016}
+\entrytitle{Junior Ingenieur}{07/2015 - 06/2016}
 \entrycompany{Nirmiti Design Engineers PVT. LTD}
 {\color{bodytext}
 \begin{itemize}
-\item Verified manufacturing work against CAD designs as a Junior Engineer.
-\item Conducted inventory reconciliation to ensure accurate inventory records.
-\item Coordinated material flow within the production process to ensure smooth manufacturing operations.
+\item Überprüfung der Fertigungsarbeiten anhand von CAD-Konstruktionen als Junior Engineer.
+\item Durchführung von Bestandsabgleichen zur Sicherstellung korrekter Lagerbestände.
+\item Koordination des Materialflusses innerhalb des Produktionsprozesses zur Gewährleistung reibungsloser Fertigungsabläufe.
 \end{itemize}}
 
 % ---- Education ----
@@ -219,15 +219,15 @@ __JOB_2_DETAILS__
 \entrycompany{RPTU Kaiserslautern-Landau}
 {\color{bodytext}
 \begin{itemize}
-\item Thesis title: Optimization of Object Detection Models and Deployment on Edge Devices
-\item Focus Areas: Software Development, Robotics, Machine Learning, Electromobility, Simulation, Communication Protocols
+\item Titel der Abschlussarbeit: Optimierung von Objekterkennungsmodellen und Deployment auf Edge-Geräten
+\item Schwerpunkte: Softwareentwicklung, Robotik, Machine Learning, Elektromobilität, Simulation, Kommunikationsprotokolle
 \end{itemize}}
 
 \entrytitle{Bachelor of Engineering in Maschinenbau}{06/2011 - 06/2015}
 \entrycompany{Pune University (India)}
 {\color{bodytext}
 \begin{itemize}
-\item Focus Areas: Simulation, Mathematics, Mechanics, Thermodynamics, CAD/CAM, Manufacturing Technologies
+\item Schwerpunkt : Simulation, MAathamatik, Mechanik, Thermodynamik, CAD/CAM, Fertigungstechnologien
 \end{itemize}}
 
 \end{rightcolumn}

@@ -220,16 +220,16 @@ class ResumeBuilderGUI(QWidget, guiHelper):
         self.job1_checkbox.setChecked(self.job1_update_state)
         self.job1_checkbox.stateChanged.connect(lambda: self.toggle_job1())
  
-        self.job2_checkbox = QCheckBox("Job2")
+        self.job2_checkbox = QCheckBox("workstudent")
         self.job2_checkbox.setChecked(self.job2_update_state)
         self.job2_checkbox.stateChanged.connect(lambda: self.toggle_job2())
 
         # ---- Action buttons ----
         self.german_cv_btn = QPushButton("German CV")
-        self.german_cv_btn.clicked.connect(lambda: self.cv_clicked("German CV"))
+        self.german_cv_btn.clicked.connect(self.run_pdf_DE2)
  
         self.english_cv_btn = QPushButton("English CV")
-        self.english_cv_btn.clicked.connect(lambda: self.cv_clicked("English CV"))
+        self.english_cv_btn.clicked.connect(self.run_pdf_ENV2)
 
         button_row2.addWidget(self.job1_checkbox)
         button_row2.addWidget(self.job2_checkbox)

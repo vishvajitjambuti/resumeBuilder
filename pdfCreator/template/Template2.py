@@ -191,7 +191,7 @@ Deutsche : \dates{B2} \\[0.5ex]
 \headright{Erfahrung}
 {\fontsize{14pt}{14pt}\selectfont
 \textcolor{cvblue!90}{\textbf {Praktikum}}} \\
-\hspace*{1em}\textit{Elvinci.de GmbH}\hfill\dates{11/2021 - 04/2021}\
+\hspace*{1em}\textit{Elvinci.de GmbH}\hfill\dates{11/2021 - 04/2022}\
 \begin{itemize}
     \item Automatisierung der täglichen betrieblichen Aufgaben. 
     \item  Durchführung statistischer und prädiktiver Analysen von B2B-Verkaufsdaten, die aus einem ERP-Tool stammen.
