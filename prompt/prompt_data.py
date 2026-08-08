@@ -28,8 +28,9 @@ Job_1_details_FullTime= [
     "Develop automation scripts (Python/Bash) for data processing, KPI generation, and optimization of test workflows",
     "design and develop the test scenarios for the ECU and vehicle system validation using Python and Bash scripting",
     "Bash Scripting for HIL testing",
-    "tech stack : python,  C++ , bash , CANOE, Capl"
-    'project3: =='
+    "tech stack : python,  C++ , bash , CANOE, Capl",
+    'project3: ==',
+    "web backend development using FastAPI for internal automation tools for test case generation",
     "worked with LLM, RAG and vector database for building internal automation tools for test case generation", 
     "LLM and AI Agents to create automated test case generation Webapp (using Langchain, huggingface, OpenAI, Azure) "
     "Design and implement FastAPI-based backend services and web components for system tesing  and integration",

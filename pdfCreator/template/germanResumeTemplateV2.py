@@ -165,7 +165,7 @@ __JOB_1_DETAILS__
 {\color{bodytext}
 __JOB_2_DETAILS__
 }
-
+\newpage
 \entrytitle{Praktikum}{11/2021 - 04/2022}
 \entrycompany{Elvinci.de GmbH}
 {\color{bodytext}

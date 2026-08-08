@@ -105,7 +105,7 @@ class ResumeTailorAgent:
             - must take refrenace from my about me, job1, and Job2 tasks (which I already complited ) 
 
             2. Generate keywords
-            - 10-20 ATS keywords
+            - 20-25 ATS keywords
             - Extract from the job description
 
             3. Generate Job_1_suggested
@@ -113,12 +113,14 @@ class ResumeTailorAgent:
             - Use only Job_1 experience
             - Action oriented
             - 15-20 words per bullet
+            - this is my current role, so you can use present tense(first job with 3 years of experience)
 
             4. Generate Job_2_suggested
-            - 6  bullets
+            - 7  bullets
             - Use only Job_2 experience
             - Highlight transferable skills
             - 15-20 words per bullet
+            - this is my previous role(as working student in industry), so you can use past tense
 
             5. Generate cover_letter_first
             - 4-5 sentences
@@ -206,8 +208,8 @@ class ResumeTailorAgent:
                     - Analyze target job description.
                     - Extract ATS keywords.
                     - Generate professional summary (about_me).
-                    - Generate 7-8 tailored bullets for current role.
-                    - Generate 6-7 tailored bullets for previous role.
+                    - Generate tailored bullets for current role.
+                    - Generate tailored bullets for previous role.
                     - Generate first cover letter paragraph.
                     - Generate final cover letter paragraph.
                     - Generate rationale.

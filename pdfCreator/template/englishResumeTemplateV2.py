@@ -143,7 +143,7 @@ __PROFILE_DETAILS__
 % ---- Experience ----
 \mainhead{EXPERIENCE}
 
-\entrytitle{Development Engineer}{01/2024 - Heute}
+\entrytitle{Development Engineer}{01/2024 - Present}
 \entrycompany{Bertrandt AG (Ingolstadt)}
 {\color{bodytext}
 __JOB_1_DETAILS__
@@ -166,7 +166,8 @@ __JOB_1_DETAILS__
 __JOB_2_DETAILS__
 }
 
-\entrytitle{Internship}{11/2021 - 04/2022}
+\newpage
+\entrytitle{Intern}{11/2021 - 04/2022}
 \entrycompany{Elvinci.de GmbH}
 {\color{bodytext}
 \begin{itemize}

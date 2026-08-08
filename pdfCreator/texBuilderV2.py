@@ -15,13 +15,14 @@ JOB1 = r"""\begin{itemize}
 """
 JOB2 = r"""
 \begin{itemize}
-\item Develop dashboards for data visualization to provide actionable insights into system performance and testing results
-\item Create automated test suites for REST APIs and Android applications to ensure functionality and high code quality
-\item Collaborate with cross-functional teams to troubleshoot issues and optimize test cases for improved reliability across projects
-\item Contribute to CI/CD validation and ensure stable software deployments through automated testing workflows across multiple projects
-\item Assist in automating testing processes to reduce manual effort and accelerate validation timelines across platforms and deployments
-\item Analyze test results to drive continuous improvement of software quality and testing workflows across teams and products
+\item Developed dashboards for data visualization to provide actionable insights into system performance and testing results
+\item Created automated test suites for REST APIs and Android applications to ensure functionality and high code quality
+\item Collaborated with cross-functional teams to troubleshoot issues and optimize test cases for improved reliability across projects
+\item Contributed to CI/CD validation and ensured stable software deployments through automated testing workflows across multiple projects
+\item Assisted in automating testing processes to reduce manual effort and accelerate validation timelines across platforms and deployments
+\item Analyzed test results to drive continuous improvement of software quality and testing workflows across teams and products
 \end{itemize}
+
 """
 ABOUT_ME = r"""
 Software Engineer with experience in vehicle systems, ECU data analysis, process automation and test automation. Proficient in Python, Bash scripting, C++, API development (FastAPI), and automated testing frameworks with a strong focus on software quality. I have hands-on experience applying HiL/SiL simulations and CAN bus signal analysis to validate complex systems against KPIs. I leverage machine learning, deep learning, computer vision, data analysis, and cloud technologies to build AI-enabled automation tools. My work with agentic AI, LLM, RAG, and vector databases supports internal tooling for test case generation and workflow optimization. I am excited to apply these capabilities to develop enterprise AI applications and drive reliable, scalable deployments.
@@ -39,13 +40,14 @@ JOB1_DE = r"""\begin{itemize}
 """
 JOB2_DE = r"""
 \begin{itemize}
-\item Entwicklung von Dashboards zur Datenvisualisierung, um verwertbare Erkenntnisse über Systemleistung und Testergebnisse zu liefern
-\item Erstellung automatisierter Testsuiten für REST-APIs und Android-Anwendungen zur Sicherstellung von Funktionalität und hoher Codequalität
-\item Zusammenarbeit mit interdisziplinären Teams zur Fehlerbehebung und Optimierung von Testfällen für verbesserte Zuverlässigkeit über Projekte hinweg
-\item Mitwirkung an der CI/CD-Validierung und Sicherstellung stabiler Software-Deployments durch automatisierte Testworkflows über mehrere Projekte hinweg
-\item Unterstützung bei der Automatisierung von Testprozessen zur Reduzierung des manuellen Aufwands und Beschleunigung der Validierungszeiten über Plattformen und Deployments hinweg
-\item Analyse von Testergebnissen zur kontinuierlichen Verbesserung von Softwarequalität und Testworkflows über Teams und Produkte hinweg
+\item Entwickelte Dashboards zur Datenvisualisierung, um umsetzbare Erkenntnisse über Systemleistung und Testergebnisse bereitzustellen
+\item Erstellte automatisierte Testsuiten für REST-APIs und Android-Anwendungen, um Funktionalität und hohe Codequalität sicherzustellen
+\item Arbeitete mit funktionsübergreifenden Teams zusammen, um Probleme zu beheben und Testfälle für eine höhere Zuverlässigkeit über Projekte hinweg zu optimieren
+\item Leistete Beiträge zur CI/CD-Validierung und stellte durch automatisierte Test-Workflows stabile Softwarebereitstellungen in mehreren Projekten sicher
+\item Unterstützte die Automatisierung von Testprozessen, um manuellen Aufwand zu reduzieren und Validierungszeiten über Plattformen und Deployments hinweg zu beschleunigen
+\item Analysierte Testergebnisse, um die kontinuierliche Verbesserung der Softwarequalität und der Test-Workflows über Teams und Produkte hinweg voranzutreiben
 \end{itemize}
+
 """
 ABOUT_ME_DE = r"""
 Software Engineer mit Erfahrung in Fahrzeugsystemen, Steuergeräte-Datenanalyse, Prozessautomatisierung und Testautomatisierung. Versiert in Python, Bash-Scripting, C++, API-Entwicklung (FastAPI) und automatisierten Test-Frameworks mit starkem Fokus auf Softwarequalität. Ich habe praktische Erfahrung in der Anwendung von HiL/SiL-Simulationen und CAN-Bus-Signalanalyse zur Validierung komplexer Systeme anhand von KPIs. Ich nutze Machine Learning, Deep Learning, Computer Vision, Datenanalyse und Cloud-Technologien, um KI-gestützte Automatisierungstools zu entwickeln. Meine Arbeit mit agentenbasierter KI, LLM, RAG und Vektordatenbanken unterstützt interne Tools zur Testfallgenerierung und Workflow-Optimierung. Ich freue mich darauf, diese Fähigkeiten bei der Entwicklung von Enterprise-KI-Anwendungen einzusetzen und zuverlässige, skalierbare Deployments voranzutreiben.
@@ -131,8 +133,7 @@ class TexBuilder:
                 content = content.replace('__JOB_1_DETAILS__', JOB1_DE)
                 content = content.replace('__PROFILE_DETAILS__', ABOUT_ME_DE)
         if self.job2:
-            if self.english:
-                content = content.replace('__JOB_2_DETAILS__', job2_str)
+            content = content.replace('__JOB_2_DETAILS__', job2_str)
         else:
             if self.english:
                 content = content.replace('__JOB_2_DETAILS__', JOB2)

@@ -71,7 +71,7 @@ class JsonCreator:
         lines.append("- for Cover_letter  first do not add 'Dear Hiring Manager' or 'To whom it may concern' in the first paragraph, just write the paragraph without any salutation.")
         lines.append("- For cover_letter_last, write a 2-3 sentence paragraph summarizing the candidate's fit for the role, expressing interest in an interview, and thanking the reader.")
         lines.append("- for Cover_letter last do not add 'Sincerely' or 'Best regards' in the last paragraph, just write the paragraph without any closing salutation.")
-        lines.append("- For keywords, extract 10-15 relevant keywords from the job description that that seems impoertant for the role and are likely to be used in ATS systems. Return them as a list of strings.")
+        lines.append("- For keywords, extract 20-25  relevant keywords  for ATS from the job description that that seems impoertant for the role and are likely to be used in ATS systems. Return them as a list of strings.")
         lines.append("- If you cannot find evidence in the resume RAG for a claim, flag it in the rationale rather than fabricating details.")
         lines.append("- Do not fibricate any details in the suggested bullets. make sure the about_me, Job_1_details_FullTime, Job_2_details_Workstudent are used as the source of truth for the candidate's experience. Do not add any new skills or experiences that are not present in the provided job details.")
         lines.append("")
@@ -92,6 +92,7 @@ class JsonCreator:
         prompt =[]
         prompt.append(f"Translate the following JSON result into German, keeping the  structure adding _german to the keys:\n{result}")
         prompt.append("make sure keep the language technicle and professional, do not change the meaning of the content, keep the same structure of the JSON object, and add _german to the keys.")
+        prompt.append("the tranlated result is being used in the resume points and cover letter, so make sure the translation is accurate and professional.")
         prompt.append("\nReturn ONLY the JSON object (no explanation text).")
         prompt = "\n".join(prompt)
         # llm_response = llm_client.chat.completions.create(
@@ -163,9 +164,9 @@ class JsonCreator:
         self.save_result_to_json(response_English, response_German, filename)
     
     def create_english_jason(self, filename, job_description):
-        # prompt = self._build_agent_prompt(job_description, self.job1_details, self.job2_details, self.about_me)
-        # print(prompt)
-        # response_English = self.run_agent(prompt=prompt)
+        """Create an English JSON file using the ResumeTailorAgent.
+        
+        """
         agent = ResumeTailorAgent()
         response_English = agent.run(
             job_description=job_description,
