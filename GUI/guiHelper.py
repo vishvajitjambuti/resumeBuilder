@@ -594,8 +594,8 @@ class guiHelper:
 
     def run_pdf_ENV2(self):
     
-            self.pdf_button.setText("Processing...")
-            self.pdf_button.setEnabled(False)
+            self.english_cv_btnV2.setText("Processing...")
+            self.english_cv_btnV2.setEnabled(False)
     
             QApplication.processEvents()
     
@@ -650,13 +650,13 @@ class guiHelper:
     
             finally:
     
-                self.pdf_button.setText("Create PDF")
-                self.pdf_button.setEnabled(True)
+                self.english_cv_btnV2.setText("English CV")
+                self.english_cv_btnV2.setEnabled(True)
 
     def run_pdf_DE2(self):
         
-                self.pdf_button.setText("Processing...")
-                self.pdf_button.setEnabled(False)
+                self.german_cv_btnV2.setText("Processing...")
+                self.german_cv_btnV2.setEnabled(False)
         
                 QApplication.processEvents()
         
@@ -711,5 +711,5 @@ class guiHelper:
         
                 finally:
         
-                    self.pdf_button.setText("Create PDF")
-                    self.pdf_button.setEnabled(True)
+                    self.german_cv_btnV2.setText("German CV")
+                    self.german_cv_btnV2.setEnabled(True)

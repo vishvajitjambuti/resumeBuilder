@@ -9,8 +9,9 @@ load_dotenv()
 class ChatGPTHandler:
     """Handler for OpenAI ChatGPT interactions."""
 
-    def __init__(self, model_name: str = "gpt-5-nano"):
+    def __init__(self, model_name: str = "gpt-5.6-luna"):
         self.model_name = model_name
+        #self.model_name =  "gpt-5.6-luna"
         self.api_key = os.getenv("CHAT_GPT_API")
 
         if not self.api_key:
@@ -20,7 +21,9 @@ class ChatGPTHandler:
         self.llm = ChatOpenAI(
                 model=model_name,
                 api_key=self.api_key,
-                temperature=0
+                temperature=0,
+                reasoning_effort="none" 
+                
             )
     
     def chat(self, messages):

@@ -1,0 +1,29 @@
+{
+  "chunks": [
+    {
+      "id": 0,
+      "text": "Q: How do I reset my password?\nA: Go to Settings > Account > Reset Password. You'll receive an email with a\nreset link that is valid for 24 hours.\n\nQ: Can I use the product on multiple devices?\nA: Yes, your license allows installation on up to 3 devices simultaneously.\nAdditional device licenses can be purchased from your account dashboard.\n\nQ: Is there a mobile app?\nA: Yes, the mobile app is available for both iOS and Android. It syncs\nautomatically with your desktop account when you're signed",
+      "source": "product_faq.txt",
+      "chunk_index": 0
+    },
+    {
+      "id": 1,
+      "text": "lable for both iOS and Android. It syncs\nautomatically with your desktop account when you're signed in.\n\nQ: How do I contact support?\nA: You can reach support via live chat on our website 24/7, or by emailing\nsupport@example.com. Average response time is under 2 hours.",
+      "source": "product_faq.txt",
+      "chunk_index": 1
+    },
+    {
+      "id": 2,
+      "text": "Refund Policy: Customers may request a full refund within 30 days of purchase,\nprovided the product is unused and in its original packaging. Refunds are\nprocessed within 5-7 business days back to the original payment method.\nAfter 30 days, we offer store credit only, valid for one year from issue.\n\nShipping Policy: Standard shipping takes 3-5 business days within the country.\nExpress shipping is available at checkout for an additional fee and delivers\nwithin 1-2 business days. International ship",
+      "source": "company_policy.txt",
+      "chunk_index": 0
+    },
+    {
+      "id": 3,
+      "text": "vailable at checkout for an additional fee and delivers\nwithin 1-2 business days. International shipping times vary by destination\nand customs processing.\n\nWarranty: All electronics come with a 1-year manufacturer warranty covering\ndefects in materials and workmanship. The warranty does not cover accidental\ndamage, water damage, or unauthorized repairs.",
+      "source": "company_policy.txt",
+      "chunk_index": 1
+    }
+  ],
+  "next_id": 4
+}

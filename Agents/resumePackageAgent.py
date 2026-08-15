@@ -99,10 +99,14 @@ class ResumeTailorAgent:
             Rules:
 
             1. Generate 'about_me'
+            - I have around 4 years of experience in software development 
             - 5 - 6 sentences
             - Tailored to the job description
-            - ATS optimized
-            - must take refrenace from my about me, job1, and Job2 tasks (which I already complited ) 
+            - ATS optimized use ATS friendly keywords from the job description
+            - must take refrenace from my about me, job1, and Job2 tasks (which I already complited )
+            -  if i am missing some teche skills focus on transferable skills highlight my learning speed  keep it focus on positive aspect
+            - also express my enthusiasm  about learning new technologies and adapting to new challenges when the job discription doent extacly match with my current and previous role
+
 
             2. Generate keywords
             - 20-25 ATS keywords
@@ -112,12 +116,19 @@ class ResumeTailorAgent:
             - 7 to 8 bullets
             - Use only Job_1 experience
             - Action oriented
+            - use ATS friendly keywords from the job description
             - 15-20 words per bullet
-            - this is my current role, so you can use present tense(first job with 3 years of experience)
+         
+            - Use present tense.
+            - Use non‑imperative, third‑person, neutral phrasing (no ‘I’, no ‘Responsible for’, no commands).
+            - Start each bullet with a noun phrase or descriptive action phrase.
+            - Keep bullets concise, technical, and achievement‑oriented.
 
             4. Generate Job_2_suggested
             - 7  bullets
             - Use only Job_2 experience
+            - use ATS friendly keywords from the job description
+            
             - Highlight transferable skills
             - 15-20 words per bullet
             - this is my previous role(as working student in industry), so you can use past tense
@@ -131,7 +142,10 @@ class ResumeTailorAgent:
             6. Generate cover_letter_last
             - 3-4 sentences
             - Summarize qualifications
+            -  if i am missing some teche skills focus on transferable skills highlight my learning speed  keep it focus on positive aspect
             - must take refrenace from my about me, job1, and Job2 tasks (which I already complited ) 
+            - also express my enthusiasm  about learning new technologies and adapting to new challenges when the job discription doent extacly match with my current and previous role
+            
             - Demonstrate enthusiasm
             - No Sincerely
             - No Regards
@@ -274,7 +288,8 @@ class ResumeTailorAgent:
         self,
         job_description: str,
         about_me: str,
-        job1: List[str],
+        #job1: List[str],
+        job1: str,
         job2: List[str]
         ):
 
@@ -287,10 +302,10 @@ class ResumeTailorAgent:
                 ----------------
                 {about_me}
 
-                JOB_1_CURRENT_ROLE
+                JOB_1_CURRENT_ROLE Project profile including the tasks and responsibilities
                 ------------------
 
-                {chr(10).join('- ' + x for x in job1)}
+              {job1}
 
                 JOB_2_PREVIOUS_ROLE
                 -------------------
@@ -350,3 +365,4 @@ class ResumeTailorAgent:
                         return observation
 
         return None
+    

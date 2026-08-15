@@ -160,7 +160,7 @@ __JOB_1_DETAILS__
 \item Containerized the complete application with Docker, enabling reproducible deployment, simplified maintenance, and portable edge-device execution.
 \end{itemize}}
 
-\entrytitle{Work student}{04/2021 - 08/2022}
+\entrytitle{Software Developer}{04/2021 - 08/2022}
 \entrycompany{Elvinci.de GmbH}
 {\color{bodytext}
 __JOB_2_DETAILS__
@@ -224,7 +224,7 @@ __JOB_2_DETAILS__
 \item Focus Areas: Software Development, Robotics, Machine Learning, Electromobility, Simulation, Communication Protocols
 \end{itemize}}
 
-\entrytitle{Bachelor of Engineering in Maschinenbau}{06/2011 - 06/2015}
+\entrytitle{Bachelor of Engineering in  Mechanical Engineering}{06/2011 - 06/2015}
 \entrycompany{Pune University (India)}
 {\color{bodytext}
 \begin{itemize}

@@ -1,6 +1,6 @@
 from typing import List, Dict, Any, Optional
 from unittest import result
-from prompt.prompt_data import about_me, Job_1_details_FullTime, Job_2_details_Workstudent
+from prompt.prompt_data import about_me, Job_1_details_FullTime, Job_2_details_Workstudent, project_profile_current_job
 import json
 from Agents.resumePackageAgent import ResumeTailorAgent
 try:
@@ -24,7 +24,7 @@ except Exception:  # pragma: no cover - fallback for test environments
 class JsonCreator:
     def __init__(self, base_json_dir: str = r"C:\Users\vishv\Working_Dir\resumeBuilder\data", job_discription= ""):
         self.job_description = job_discription
-        self.job1_details = Job_1_details_FullTime
+        self.job1_details = project_profile_current_job
         self.job2_details = Job_2_details_Workstudent
         self.about_me = about_me
         self.job_details_json_path = base_json_dir
@@ -91,8 +91,12 @@ class JsonCreator:
         llm_client = llm_handler.client
         prompt =[]
         prompt.append(f"Translate the following JSON result into German, keeping the  structure adding _german to the keys:\n{result}")
+        prompt.append("Use ATS keywords while translating the result, and make sure the translation is accurate and professional.")
         prompt.append("make sure keep the language technicle and professional, do not change the meaning of the content, keep the same structure of the JSON object, and add _german to the keys.")
         prompt.append("the tranlated result is being used in the resume points and cover letter, so make sure the translation is accurate and professional.")
+        prompt.append("Use non‑imperative, third‑person, professional phrasing (no ‘Ich’, no commands).")
+        prompt.append("Use German B2 level.")
+        prompt.append("return the translated result only")
         prompt.append("\nReturn ONLY the JSON object (no explanation text).")
         prompt = "\n".join(prompt)
         # llm_response = llm_client.chat.completions.create(

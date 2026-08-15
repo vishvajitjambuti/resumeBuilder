@@ -3,9 +3,9 @@ from typing import Optional
 import json
 #from pdfCreator.template.Template2 import template
 JOB1 = r"""\begin{itemize}
-\item Develop automated test case generation tools by integrating Agents, LLMs, RAG, and vector databases to accelerate validation process by using LangChain and LangGraph
 \item Design and implement test scenarios for DMS ECU validation to meet KPIs and functional requirements
 \item Develop Python/Bash automation scripts to process data, generate KPIs, and optimize test workflows across multiple test benches and CI pipelines
+\item Develop automated test case generation tools by integrating Agents, LLMs, RAG, and vector databases to accelerate validation process by using LangChain and LangGraph
 \item Create FastAPI backend services and React-based web components for system testing and integration in enterprise environments with robust API validation
 \item Develop and maintain automated unit tests and API validation to improve code quality and reliability
 \item Contribute to CI/CD pipelines by creating API tests and test automation scripts for seamless deployments across multiple projects
@@ -28,9 +28,9 @@ ABOUT_ME = r"""
 Software Engineer with experience in vehicle systems, ECU data analysis, process automation and test automation. Proficient in Python, Bash scripting, C++, API development (FastAPI), and automated testing frameworks with a strong focus on software quality. I have hands-on experience applying HiL/SiL simulations and CAN bus signal analysis to validate complex systems against KPIs. I leverage machine learning, deep learning, computer vision, data analysis, and cloud technologies to build AI-enabled automation tools. My work with agentic AI, LLM, RAG, and vector databases supports internal tooling for test case generation and workflow optimization. I am excited to apply these capabilities to develop enterprise AI applications and drive reliable, scalable deployments.
 """
 JOB1_DE = r"""\begin{itemize}
-\item Entwicklung von Tools zur automatisierten Testfallgenerierung durch Integration von Agents, LLMs, RAG und Vektordatenbanken zur Beschleunigung des Validierungsprozesses mittels LangChain und LangGraph
 \item Konzeption und Implementierung von Testszenarien für die DMS-Steuergeräte-Validierung zur Erfüllung von KPIs und funktionalen Anforderungen
 \item Entwicklung von Python/Bash-Automatisierungsskripten zur Datenverarbeitung, KPI-Generierung und Optimierung von Testabläufen über mehrere Prüfstände und CI-Pipelines hinweg
+\item Entwicklung von Tools zur automatisierten Testfallgenerierung durch Integration von Agents, LLMs, RAG und Vektordatenbanken zur Beschleunigung des Validierungsprozesses mittels LangChain und LangGraph
 \item Erstellung von FastAPI-Backend-Services und React-basierten Webkomponenten für Systemtests und Integration in Unternehmensumgebungen mit robuster API-Validierung
 \item Entwicklung und Pflege automatisierter Unit-Tests und API-Validierung zur Verbesserung von Codequalität und Zuverlässigkeit
 \item Mitwirkung an CI/CD-Pipelines durch Erstellung von API-Tests und Testautomatisierungsskripten für nahtlose Deployments über mehrere Projekte hinweg

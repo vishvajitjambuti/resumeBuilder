@@ -143,7 +143,7 @@ __PROFILE_DETAILS__
 % ---- Experience ----
 \mainhead{EXPERIENCE}
 
-\entrytitle{Development Engineer}{01/2024 - Heute}
+\entrytitle{Entwicklungsingenieur}{01/2024 - Heute}
 \entrycompany{Bertrandt AG (Ingolstadt)}
 {\color{bodytext}
 __JOB_1_DETAILS__
@@ -160,7 +160,7 @@ __JOB_1_DETAILS__
 \item Containerisierung der gesamten Anwendung mit Docker zur Ermöglichung reproduzierbarer Deployments, vereinfachter Wartung und portabler Ausführung auf Edge-Geräten.
 \end{itemize}}
 
-\entrytitle{Werkstudent}{04/2021 - 08/2022}
+\entrytitle{Softwareentwickler}{04/2021 - 08/2022}
 \entrycompany{Elvinci.de GmbH}
 {\color{bodytext}
 __JOB_2_DETAILS__
