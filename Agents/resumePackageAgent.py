@@ -100,11 +100,10 @@ class ResumeTailorAgent:
 
             1. Generate 'about_me'
             - I have around 4 years of experience in software development 
-            - 5 - 6 sentences
+            - 4-5 sentences
             - Tailored to the job description
             - ATS optimized use ATS friendly keywords from the job description
             - must take refrenace from my about me, job1, and Job2 tasks (which I already complited )
-            -  if i am missing some teche skills focus on transferable skills highlight my learning speed  keep it focus on positive aspect
             - also express my enthusiasm  about learning new technologies and adapting to new challenges when the job discription doent extacly match with my current and previous role
 
 
@@ -118,11 +117,11 @@ class ResumeTailorAgent:
             - Action oriented
             - use ATS friendly keywords from the job description
             - 15-20 words per bullet
-         
+            - resume points needs to be conceise,(short) technical, and achievement‑oriented for german industry oriented
             - Use present tense.
             - Use non‑imperative, third‑person, neutral phrasing (no ‘I’, no ‘Responsible for’, no commands).
             - Start each bullet with a noun phrase or descriptive action phrase.
-            - Keep bullets concise, technical, and achievement‑oriented.
+            
 
             4. Generate Job_2_suggested
             - 7  bullets

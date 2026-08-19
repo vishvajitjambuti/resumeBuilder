@@ -1,3 +1,5 @@
+from pdfplumber import pdf
+
 from services.JsonCreator import JsonCreator
 from pdfCreator.texBuilder import TexBuilder
 from pdfCreator.pdfBuilder import PDFBuilder
@@ -6,6 +8,8 @@ from pdfCreator.texCoverLetter import CoverLetterTexBuilder
 from pdfCreator.texBuilderV2 import TexBuilder as TexBuilderV2
 from pdfCreator.template.englishResumeTemplateV2 import template as english_templateV2
 from pdfCreator.template.germanResumeTemplateV2 import template as german_templateV2
+from pdfCreator.template.germanResumeTemplateV3 import template as german_templateV3
+from pdfCreator.template.englishResumeTemplateV3 import template as english_templateV3
 from pdfCreator.template.Template2 import template as german_templateV1
 import sys
 import io
@@ -609,7 +613,7 @@ class guiHelper:
                     tex = TexBuilderV2(
                         tex_dir=self.out_dir.text().strip(),
                         job_dis_path=self.job_dis_path.text().strip(),
-                        template=english_templateV2, 
+                        template=english_templateV3, 
                         keywords=True, 
                         english=True,
                         job1=self.job1_update_state, 
@@ -670,7 +674,7 @@ class guiHelper:
                         tex = TexBuilderV2(
                             tex_dir=self.out_dir.text().strip(),
                             job_dis_path=self.job_dis_path.text().strip(),
-                            template=german_templateV2,
+                            template=german_templateV3,
                             keywords=True, 
                             english=False,
                             job1=self.job1_update_state, 

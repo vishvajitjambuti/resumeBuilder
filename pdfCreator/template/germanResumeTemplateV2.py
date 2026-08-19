@@ -12,6 +12,9 @@ template = r"""\documentclass[9pt]{extarticle}
 \usepackage{tabto}
 \usepackage[skip=0pt]{parskip}
 \usepackage{ragged2e}
+\usepackage{fontawesome}
+\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 
 % ---------- Fonts (Calibri, matching original) ----------
 \setmainfont{Carlito}[
@@ -104,7 +107,8 @@ Ettinger Stra\ss e 1,\par
 85057 Ingolstadt\par
 
 \sidehead{PERSONAL INFO \& LANGUAGE}\\
-Birth Date: 15/10/1993\par
+%Birth Date: 15/10/1993\par
+\textcolor{navy}{\href{https://www.linkedin.com/in/vishvajit-jambuti-511b7a17b/}{\faLinkedin\ \ Vishvajit Jambuti}}\par
 English: C1\par
 German: B2\par
 

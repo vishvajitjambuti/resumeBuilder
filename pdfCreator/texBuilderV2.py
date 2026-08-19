@@ -153,10 +153,12 @@ class TexBuilder:
 
 
     def job_details_to_latex(self, items):
-        latex = "\\begin{itemize}\n"
+        #latex = "\\begin{itemize}\n"
+        latex = ""
         for item in items:
             latex += f"    \\item {item}\n"
-        latex += "\\end{itemize}\n"
+        #latex += "\\end{itemize}\n"
+        latex += "\n"
         return latex
 
     def keywords_to_latex(self, keywords):
@@ -175,12 +177,13 @@ class TexBuilder:
             for i in range(0, len(lst), n):
                 yield lst[i:i+n]
 
-        latex_lines = ["\\begin{itemize}[leftmargin=10pt]"]
+        latex_lines = []
+        #latex_lines = ["\\begin{itemize}[leftmargin=10pt]"]
 
         for chunk in chunks(skills, chunk_size):
             latex_lines.append("\\item " + ", ".join(chunk))
 
-        latex_lines.append("\\end{itemize}")
+        #latex_lines.append("\\end{itemize}")
 
         return "\n".join(latex_lines)
 
